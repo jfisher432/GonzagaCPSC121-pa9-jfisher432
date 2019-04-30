@@ -16,7 +16,7 @@ int main() {
 	cout << "enter file name" << endl;
 	cin >> filename;
 	
-	int hello;
+
 	
 	
 	openInputFile(inputFile, filename);

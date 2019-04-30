@@ -16,6 +16,8 @@ int main() {
 	cout << "enter file name" << endl;
 	cin >> filename;
 	
+	int hello;
+	
 	
 	openInputFile(inputFile, filename);
 	string nameonly = filename.substr(0, filename.length()-4);

@@ -27,8 +27,7 @@ int main() {
 	cout << "rows: " << rows << " cols: " << cols << endl;
 	readBody(inputFile, imageData, rows, cols);
 	cout << "rows check: " << imageData.size() << " cols check: " << imageData.at(0).size() << endl;
-	// task: define and call a displaySingleRow() function that accepts a row of image data and displays the triples
-	//displaySingleRow(imageData.at(rows - 1)); // display that last row
+	
 	
 	for (i = 0; i <= 9; i++) {
 	applyModification(imageData, nameonly, transforms[i]); // put in string what user enters eventually

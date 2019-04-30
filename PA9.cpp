@@ -7,14 +7,14 @@
 #include "header.h"
 
 /*
- * Function: string getWords(string words)               	
- * Date Created: 4/3/19                 	        
- * Date Last Modified: 4/3/19                       
- * Description: gets a random word from the inputFile                	
- * Input parameters: string words    	
- * Returns: a string word         	
- * Pre: no word  	
- * Post: a word     
+ * Function: void applyVerticalFlip(const vector<vector<vector<short>>>& Data, ofstream& outputFile)              	
+ * Date Created: 4/29/19                 	        
+ * Date Last Modified: 4/29/19                       
+ * Description: flips it vertically                	
+ * Input parameters: 3D vector ofstream   	
+ * Returns: void      	
+ * Pre: no flip 	
+ * Post: a flip    
 */
 
 
@@ -34,6 +34,16 @@ void applyVerticalFlip(const vector<vector<vector<short>>>& Data, ofstream& outp
 	}
 }
 
+/*
+ * Function:void applyHorizontalFlip(const vector<vector<vector<short>>>& Data, ofstream& outputFile)           	
+ * Date Created: 4/29/19                 	        
+ * Date Last Modified: 4/29/19                       
+ * Description: flips it horizontally               	
+ * Input parameters: 3D vector ofstream output file   	
+ * Returns: void      	
+ * Pre: no flip 	
+ * Post: a flip    
+*/
 void applyHorizontalFlip(const vector<vector<vector<short>>>& Data, ofstream& outputFile) {
 	
 	int i, j, k;
@@ -47,7 +57,16 @@ void applyHorizontalFlip(const vector<vector<vector<short>>>& Data, ofstream& ou
 }
 		
 }
-
+/*
+ * Function: short computeNegativeValue(short value)           	
+ * Date Created: 4/29/19                 	        
+ * Date Last Modified: 4/29/19                       
+ * Description: computes the negative of an image             	
+ * Input parameters: short  	
+ * Returns: void      	
+ * Pre: no negative 	
+ * Post: a negative  
+*/
 short computeNegativeValue(short value) {
 	 
 
@@ -55,7 +74,16 @@ short computeNegativeValue(short value) {
 
 	 
 }
-
+/*
+ * Function:short computeHighContrastValue(short value)         	
+ * Date Created: 4/29/19                 	        
+ * Date Last Modified: 4/29/19                       
+ * Description: computes high contrast          	
+ * Input parameters: short  	
+ * Returns: void      	
+ * Pre: no contrast	
+ * Post: contrast 
+*/
 short computeHighContrastValue(short value) {
 		
 		if (value > 127) {
@@ -68,6 +96,16 @@ short computeHighContrastValue(short value) {
 		}
 	
 	 }
+/*
+ * Function:short computeRandomNoiseValue(short value)   	
+ * Date Created: 4/29/19                 	        
+ * Date Last Modified: 4/29/19                       
+ * Description: noise        	
+ * Input parameters: short  	
+ * Returns: void      	
+ * Pre: no noise
+ * Post: noise
+*/
 short computeRandomNoiseValue(short value) {
 	
 	short n = 0;
@@ -84,7 +122,16 @@ short computeRandomNoiseValue(short value) {
 	}
 	return value;
 }
-
+/*
+ * Function: short computeGrayScaleValue(vector<short> gray)
+ * Date Created: 4/29/19                 	        
+ * Date Last Modified: 4/29/19                       
+ * Description: returns gray value    	
+ * Input parameters: short vector  	
+ * Returns: void      	
+ * Pre: no gray
+ * Post: gray
+*/
 short computeGrayScaleValue(vector<short> gray) {
 	
 	int average = 0;
@@ -95,7 +142,16 @@ short computeGrayScaleValue(vector<short> gray) {
 	
 	
 }
-
+/*
+ * Function: void applyGray(const vector<vector<vector<short>>>& Data, ofstream& outputFile)
+ * Date Created: 4/29/19                 	        
+ * Date Last Modified: 4/29/19                       
+ * Description: calls the gray functions from above   	
+ * Input parameters: 3d vector outputfile	
+ * Returns: void      	
+ * Pre: no writing to output file
+ * Post: writing to output file 
+*/
 void applyGray(const vector<vector<vector<short>>>& Data, ofstream& outputFile) {
 	short i, j, k;
 	short average;
@@ -110,8 +166,16 @@ void applyGray(const vector<vector<vector<short>>>& Data, ofstream& outputFile) 
 	outputFile << endl;
 	}
 }
-
-
+/*
+ * Function: void applyRed(const vector<vector<vector<short>>>& Data, ofstream& outputFile)
+ * Date Created: 4/29/19                 	        
+ * Date Last Modified: 4/29/19                       
+ * Description: removes red   	
+ * Input parameters: 3d vector outputfile	
+ * Returns: void      	
+ * Pre: no writing to output file
+ * Post: writing to output file 
+*/
 void applyRed(const vector<vector<vector<short>>>& Data, ofstream& outputFile) {
 	short i, j, k;
 	for (i = 0; i < Data.size(); i++) {
@@ -124,7 +188,16 @@ void applyRed(const vector<vector<vector<short>>>& Data, ofstream& outputFile) {
 		}
 	outputFile << endl;
 	}
-
+/*
+ * Function: void applyGreen(const vector<vector<vector<short>>>& Data, ofstream& outputFile)
+ * Date Created: 4/29/19                 	        
+ * Date Last Modified: 4/29/19                       
+ * Description: removes green  	
+ * Input parameters: 3d vector outputfile	
+ * Returns: void      	
+ * Pre: no writing to output file
+ * Post: writing to output file 
+*/
 void applyGreen(const vector<vector<vector<short>>>& Data, ofstream& outputFile) {
 	short i, j, k;
 	for (i = 0; i < Data.size(); i++) {
@@ -138,6 +211,16 @@ void applyGreen(const vector<vector<vector<short>>>& Data, ofstream& outputFile)
 		}
 	outputFile << endl;
 	}
+/*
+ * Function: void applyBlue(const vector<vector<vector<short>>>& Data, ofstream& outputFile)
+ * Date Created: 4/29/19                 	        
+ * Date Last Modified: 4/29/19                       
+ * Description: removes Blue  	
+ * Input parameters: 3d vector outputfile	
+ * Returns: void      	
+ * Pre: no writing to output file
+ * Post: writing to output file 
+*/
 void applyBlue(const vector<vector<vector<short>>>& Data, ofstream& outputFile) {
 	short i, j, k;
 	for (i = 0; i < Data.size(); i++) {
@@ -151,17 +234,16 @@ void applyBlue(const vector<vector<vector<short>>>& Data, ofstream& outputFile) 
 		}
 	outputFile << endl;
 	}
-
-
-
-
-
-
-
-
-
-
-	
+/*
+ * Function: void applyNoise(const vector<vector<vector<short>>>& Data, ofstream& outputFile)
+ * Date Created: 4/29/19                 	        
+ * Date Last Modified: 4/29/19                       
+ * Description: calls noise function from above	
+ * Input parameters: 3d vector outputfile	
+ * Returns: void      	
+ * Pre: no writing to output file
+ * Post: writing to output file 
+*/	
 void applyNoise(const vector<vector<vector<short>>>& Data, ofstream& outputFile) {
 	short i, j, k;
 	for (i = 0; i < Data.size(); i++) {
@@ -176,7 +258,16 @@ void applyNoise(const vector<vector<vector<short>>>& Data, ofstream& outputFile)
 	}
 }
 	
-
+/*
+ * Function: void applyContrast(const vector<vector<vector<short>>>& Data, ofstream& outputFile)
+ * Date Created: 4/29/19                 	        
+ * Date Last Modified: 4/29/19                       
+ * Description: calls contrast function from above	
+ * Input parameters: 3d vector outputfile	
+ * Returns: void      	
+ * Pre: no writing to output file
+ * Post: writing to output file 
+*/
 void applyContrast(const vector<vector<vector<short>>>& Data, ofstream& outputFile) {
 	short i, j, k;
 	for (i = 0; i < Data.size(); i++) {
@@ -190,15 +281,16 @@ void applyContrast(const vector<vector<vector<short>>>& Data, ofstream& outputFi
 	outputFile << endl;
 	}
 }
-
-
-
-
-
-
-	 
-	 
-
+/*
+ * Function: void applyContrast(const vector<vector<vector<short>>>& Data, ofstream& outputFile)
+ * Date Created: 4/29/19                 	        
+ * Date Last Modified: 4/29/19                       
+ * Description: calls contrast function from above	
+ * Input parameters: 3d vector outputfile	
+ * Returns: void      	
+ * Pre: no writing to output file
+ * Post: writing to output file 
+*/
 void applyNegative(const vector<vector<vector<short>>>& Data, ofstream& outputFile) {
 	short i, j, k;
 	for (i = 0; i < Data.size(); i++) {
@@ -214,7 +306,16 @@ void applyNegative(const vector<vector<vector<short>>>& Data, ofstream& outputFi
 }
 
 
-
+/*
+ * Function: void applyModification(const vector<vector<vector<short>>>& Data, ofstream& outputFile)
+ * Date Created: 4/29/19                 	        
+ * Date Last Modified: 4/29/19                       
+ * Description: calls all the functions from above and does a lot of good work
+ * Input parameters: 3d vector outputfile	
+ * Returns: void      	
+ * Pre: no writing to output file
+ * Post: writing to output file 
+*/
 void applyModification(const vector<vector<vector<short>>>& image, string filename, string transformation) {
 	ofstream outputFile;
 	
@@ -327,16 +428,14 @@ void applyModification(const vector<vector<vector<short>>>& image, string filena
 	
 }
 /*
-void displaySingleRow(const vector<vector<short>>& row) {
-	int i, j;
-	for (i = 0; i < row.size(); i++) {
-		for (j = 0; j < row.at(i).size(); j++) {
-			cout << row.at(i).at(j) << " ";
-		}
-		
-	}
-	cout << endl;
-}
+ * Function: void readBody(ifstream& inputFile, vector<vector<vector<short>>>& imageData, int rows, int cols) {
+ * Date Created: 4/29/19                 	        
+ * Date Last Modified: 4/29/19                       
+ * Description: gets the body of the image 
+ * Input parameters: 3d vector outputfile	
+ * Returns: void      	
+ * Pre: no image
+ * Post: gets image dimensions 
 */
 void readBody(ifstream& inputFile, vector<vector<vector<short>>>& imageData, int rows, int cols) {
 	// there are several ways to read the body of the file
@@ -375,7 +474,16 @@ void readBody(ifstream& inputFile, vector<vector<vector<short>>>& imageData, int
 	
 
 }
-
+/*
+ * Function: void readHeader(ifstream& inputFile, int& rows, int& cols)  {
+ * Date Created: 4/29/19                 	        
+ * Date Last Modified: 4/29/19                       
+ * Description: gets the header 
+ * Input parameters: 3d vector outputfile	
+ * Returns: void      	
+ * Pre: no header
+ * Post: a header
+*/
 void readHeader(ifstream& inputFile, int& rows, int& cols) {
 	string specification;
 	int maxRGB;
@@ -384,7 +492,16 @@ void readHeader(ifstream& inputFile, int& rows, int& cols) {
 	inputFile >> maxRGB;
 
 }
-
+/*
+ * Function: void openInputFile(ifstream& inputFile, string fname) {
+ * Date Created: 4/29/19                 	        
+ * Date Last Modified: 4/29/19                       
+ * Description: opens intput file
+ * Input parameters: string inputfile
+ * Returns: void      	
+ * Pre: no inputfile
+ * Post: a input file
+*/
 void openInputFile(ifstream& inputFile, string fname) {
 	inputFile.open(fname);
 	
@@ -396,6 +513,16 @@ void openInputFile(ifstream& inputFile, string fname) {
 		exit(-1);
 	}
 }
+/*
+ * Function: void openOuputFile(ifstream& inputFile, string fname) {
+ * Date Created: 4/29/19                 	        
+ * Date Last Modified: 4/29/19                       
+ * Description: opens output file
+ * Input parameters: string outputfile
+ * Returns: void      	
+ * Pre: no outputfile
+ * Post: a output file
+*/
  void openOutputFile(ofstream& outputFile, string fname) {
  	  outputFile.open(fname);
  	  
